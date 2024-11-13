@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux des mots cachés</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="parent-container">
+        <div class="container">
+            <h1>Jeux des mots cachés</h1>
+            <div id="jeux">
+                <p id="mot"></p> 
+                <p>Essais restants : <span id="essais">6</span></p>
+                <div>
+                    <input type="text" id="lettre" maxlength="1" placeholder="Entrez une lettre" onkeydown="detecterEntree(event)">
+                    <button onclick="verifierLettre()">Valider</button>
+                </div>
+            </div>
+            <div id="pendu"></div>
+            <p>Lettres incorrectes : <span id="lettresIncorrectes"></span></p>
+            <p id="message"></p>
+        </div>
+    
+        <div id="motadeviner">
+            <h1>Choisissez le mot à faire deviner</h1>
+            <input type="password" id="motADeviner" maxlength="25" placeholder="="Choisissez le mot à faire deviner" onkeydown="detecterEntree(event)">
+            <button onclick="choisirMotADeviner()">Valider</button>
+        </div>
+    </div>
+    <button onclick="resetJeu()" id="recommencer">Recommencer le jeu</button>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="popupMessage"></span>
+            <button onclick="fermerPopup()">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>   
+</body>
+</html>
